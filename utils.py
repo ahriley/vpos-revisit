@@ -21,27 +21,27 @@ def aitoff(figsize, plot_vpos=True):
     ax.grid(True)
 
     if plot_vpos:
-        co_pole, theta = utils.vpos_pars()
+        co, theta = vpos_pars()
         phi = np.linspace(0, 2*np.pi, 100)
         rcos = theta*np.cos(phi)
         rsin = theta*np.sin(phi)
 
-        con_pole = SkyCoord(co.l+180*u.deg, -co.b, frame='galactic')
+        con = SkyCoord(co.l+180*u.deg, -co.b, frame='galactic')
         co_ring = SkyCoord(co.l + rcos, co.b + rsin, frame='galactic')
         con_ring = SkyCoord(co.l+rcos-np.pi*u.rad,-co.b-rsin, frame='galactic')
 
         k = {'c': 'g', 'zorder': 100}
-        utils.plot_aitoff(ax, co_pole.l, co.b, marker='x', s=100, **k)
-        utils.plot_aitoff(ax, counter.l, counter.b, marker='+', s=100, **k)
-        utils.plot_aitoff(ax, co_ring.l, co_ring.b, plot=True, **k)
+        plot_aitoff(ax, co.l, co.b, marker='x', s=100, **k)
+        plot_aitoff(ax, con.l, con.b, marker='+', s=100, **k)
+        plot_aitoff(ax, co_ring.l, co_ring.b, plot=True, **k)
 
         # left counter-loop
         sel = con_ring.l < 180*u.deg
-        utils.plot_aitoff(ax, con_ring.l[sel], con_ring.b[sel], plot=True, **k)
+        plot_aitoff(ax, con_ring.l[sel], con_ring.b[sel], plot=True, **k)
 
         # right counter-loop
         sel = con_ring.l > 180*u.deg
-        utils.plot_aitoff(ax, con_ring.l[sel], con_ring.b[sel], plot=True, **k)
+        plot_aitoff(ax, con_ring.l[sel], con_ring.b[sel], plot=True, **k)
 
     return ax
 
