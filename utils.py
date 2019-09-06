@@ -3,15 +3,13 @@ import matplotlib.pyplot as plt
 from astropy.coordinates import SkyCoord
 import astropy.units as u
 
-sc_kwargs = {'unit': 'deg', 'frame': 'galactic'}
-
 def vpos_pars():
     pole = SkyCoord(169.3, -2.8, unit='deg', frame='galactic')
     tol = np.arccos(-(0.1*(4*np.pi)/(2*np.pi) - 1)) * u.rad
     return pole, tol
 
-def aitoff(figsize, plot_vpos=True):
-    plt.figure(figsize=(8,6))
+def aitoff(figsize=(8,6), dpi=100, plot_vpos=True):
+    plt.figure(figsize=figsize, dpi=dpi)
     ax = plt.subplot(111, projection="aitoff")
 
     ticks = np.array([-1, -2/3, -1/3, 0, 1/3, 2/3, 1])
