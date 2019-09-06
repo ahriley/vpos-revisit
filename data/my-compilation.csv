@@ -1,0 +1,64 @@
+name,reference,lon1,lat1,lon2,lat2,dist1,dist2,e_lb1,e_lb2,e_dist1,e_dist2,frame,flag,notes
+20.0-1,Mateu2018,112.92,61.56,273.92,-43.35,12.55,28.05,1.8,1.8,1.255,2.805,icrs,red,maybe associated with PS1-C
+ACS,Grillmair2006a,126.4,-0.7,133.9,64.2,8.9,8.9,2.12,2.12,0.2,0.2,icrs,gold,"take reported 5deg width as FWHM, maybe switch to Morganson2016?"
+ATLAS,Shipp2018,9.3,-20.9,30.7,-33.2,22.9,22.9,0.24,0.24,4.58,4.58,icrs,gold,
+Acheron,Grillmair2009,230,-2,259,21,3.8,3.5,0.5,0.5,0.76,0.7,icrs,gold,distance swapped in galstreams
+Aliqa_Uma,Shipp2018,31.7,-31.5,40.6,-38.3,28.8,28.8,0.26,0.26,5.76,5.76,icrs,gold,
+Alpheus,Grillmair2013,27.7,-45,21.58,-69,2,1.6,1.36,1.36,0.7,0.8,icrs,gold,"endpt2 from eqn 1, width FWHM 3.2"
+Cetus,Yam2013,20.01,-4.12,31.97,23.61,32.5,27.2,3.5,4.7,1.3,1.7,icrs,red,disagrees heavily w/ galstreams
+Chenab,Shipp2018,-40.7,-59.9,-28.3,-43,39.8,39.8,0.71,0.71,7.96,7.96,icrs,gold,
+Cocytos,Grillmair2009,186,-3,259,20,11,11,0.5,0.5,2,2,icrs,gold,
+Corvus,Mateu2018,84.98,-16.95,266.16,-22.06,3.24,19.39,1.63,1.63,0.324,1.939,icrs,red,
+EBS,Grillmair2011,132.25,13.6,135.4,0.12,9.4,9.7,0.5,0.5,1.4,0.9,icrs,red,"Deason2017 says is just another part of Monoceros, maybe switch to Morganson2016?"
+Elqui,Shipp2018,10.7,-36.9,20.6,-42.4,50.1,50.1,0.54,0.54,10.02,10.02,icrs,gold,
+EriPhe,Li2016,37.99,-50.21,15.56,-57.07,16.3,16.3,0.5,0.5,3.26,3.26,icrs,red,"possibly associated w/ Virgo and Her-Aq (Li2016, Simion2018), Turbio (Shipp2018)"
+Eridanus,Myeong2017,65.98,-21.42,66.4,-20.96,90.1,90.1,0.165,0.165,4.1446,4.1446,icrs,gold,
+Fimbulthul,Ibata2019,198.74,-29.56,214.23,-22.76,4.22,4.22,0.5,0.5,0.01,0.01,icrs,silver,
+Fjorm,Ibata2019,197.37,5.55,250.88,64.2,4.9,4.9,0.5,0.5,0.07,0.07,icrs,silver,
+GD-1,Malhan2018,135,17,190,58,6.5,10,0.5,0.5,0.65,1,icrs,gold,
+Gaia-1,Malhan2018,184,-18,197,-2,6,5,0.5,0.5,0.6,0.5,icrs,gold,distance swapped in galstreams
+Gaia-2,Malhan2018,6,-22,15,-27,13,10,0.5,0.5,1.3,1,icrs,gold,distance swapped in galstreams
+Gaia-3,Malhan2018,171,-15,179,-32,9,14,0.5,0.5,0.9,1.4,icrs,gold,
+Gaia-4,Malhan2018,163,-11,167,-3,11.5,10.7,0.5,0.5,1.15,1.07,icrs,gold,distance swapped in galstreams
+Gaia-5,Malhan2018,137,23,154,42,20.5,18.5,0.5,0.5,2.05,1.85,icrs,gold,distance swapped in galstreams
+Gjoll,Ibata2019,70.16,-2.46,90.05,-20.15,3.38,3.38,0.5,0.5,0.1,0.1,icrs,silver,
+Hermus,Grillmair2014,245.4,5,253.05,49.9,19,15,0.5,0.5,3,3,icrs,red,"maybe assoc with Phoenix (Grillmair2016, Martin2018)"
+Hyllus,Grillmair2014,249,11,246.9,34,23,18.5,0.5,0.5,3,3,icrs,red,
+Indus,Shipp2018,-36.3,-50.7,-8,-64.8,16.6,16.6,0.83,0.83,3.32,3.32,icrs,gold,also in Malhan2018
+Jet,Jethwa2018,134.671,-26.584,142.329,-17.526,28.6,28.6,0.18,0.18,0.8,0.8,icrs,gold,distance is +0.7 -0.9. e_lb from stream width
+Jhelum,Shipp2018,-38.8,-45.1,4.7,-51.7,13.2,13.2,1.16,1.16,2.64,2.64,icrs,gold,also in Malhan2018
+Kwando,Grillmair2017b,19,-23.9,31,-29.33,20,20,0.5,0.5,4,4,icrs,red,
+Leiptr,Ibata2019,61.03,0.72,96.18,-34.21,7.92,7.92,0.5,0.5,0.42,0.42,icrs,silver,
+Lethe,Grillmair2009,258,20,171,18,13.4,12.2,0.5,0.5,2.68,2.44,icrs,gold,copying stated distances in kpc even though eastern end distance modulus says 14.01 kpc
+Molonglo,Shipp2018,6.4,-24.4,13.6,-28.1,22.9,22.9,0.32,0.32,4.58,4.58,icrs,gold,in VPOS (Grillmair2017b)
+Murrumbidgee,Grillmair2017b,358.71,15.97,13.9,-25.27,20,20,0.5,0.5,4,4,icrs,red,in VPOS (Grillmair2017b)
+NGC5466,Grillmair2006b,211.37,28.53,180,42,16,16,0,2,0.736,3.2,icrs,red,
+Ophiucus,Bernard2014,240.56,-7.17,242.96,-6.73,9.5,9.5,0.5,0.5,0.9,0.9,icrs,silver,
+Orinoco,Grillmair2017b,0,-25.51,22.97,-28.61,20,20,0.5,0.5,4,4,icrs,red,
+Orphan,Malhan2018,145,40,153,20,38,33,0.5,0.5,3.8,3.3,icrs,gold,segment of stream found in Newberg2010
+PAndAS,Martin2014,4.95,45.92,20.47,40.97,17,17,1,1,3,3,icrs,red,
+PS1-A,Bernard2016,28.39,-6.55,30.14,-1.97,7.9,7.9,0.5,0.5,1.85,1.85,icrs,silver,e_dist is average of +2.1 -1.6
+PS1-B,Bernard2016,145.59,-15.28,151.13,-7,14.5,14.5,0.5,0.5,3.35,3.35,icrs,silver,e_dist is average of +3.7 -3.0
+PS1-C,Bernard2016,330.26,11.75,334.98,18.2,17.4,17.4,0.5,0.5,4.05,4.05,icrs,silver,e_dist is average of +4.5 -3.6
+PS1-D,Bernard2016,138.7,-21.58,140.74,23.28,22.9,22.9,0.5,0.5,5.3,5.3,icrs,silver,e_dist is average of +5.9 -4.7
+PS1-E,Bernard2016,160.11,46.13,192.94,62.89,12.6,12.6,0.5,0.5,2.95,2.95,icrs,silver,e_dist is average of +3.3 -2.6
+Pal15,Myeong2017,255.3,-1.47,254.8,-0.12,45.1,45.1,0.165,0.165,2.0746,2.0746,icrs,gold,
+Pal5,Pearson2017,219.79,-11.15,248.4,9.18,22.9,22.9,0.5,0.5,2.29,2.29,icrs,red,galstreams footprint based on private communication with Price-Whelan. may just want to use Pal5 as one end and only one arm for other?
+Palca,Shipp2018,30.3,-53.7,16.2,2.4,36.3,36.3,2,2,7.26,7.26,icrs,gold,"FWHM=2, ""much wider than other new DES streams"""
+Pegasus,Perottoni2019,328.3,20.8,333.4,28.1,18,18,0.17,0.17,2,2,icrs,gold,not in galstreams (as of July 10 2019)
+Phlegethon,Ibata2018,284.75,-59.2,324.5,-0.26,3.57,3.57,1.4,1.4,0.28,0.28,icrs,silver,endpt2 is ~10 deg within stream
+Phoenix,Shipp2018,20.1,-55.3,27.9,-42.7,19.1,19.1,0.16,0.16,3.82,3.82,icrs,gold,
+Ravi,Shipp2018,-25.2,-44.1,-16,-59.7,22.9,22.9,0.72,0.72,4.58,4.58,icrs,gold,
+Sangarius,Grillmair2017a,134.06,-17.79,131.57,32.65,21,21,0.5,0.5,5,5,icrs,red,in VPOS (Grillmair2017a)
+Scamander,Grillmair2017a,151.64,-20.47,143.61,44.34,21,21,0.5,0.5,5,5,icrs,red,in VPOS (Grillmair2017a)
+Slidr,Ibata2019,148.38,14.99,178.01,2.98,3.65,3.65,0.5,0.5,0.09,0.09,icrs,silver,
+Styx,Grillmair2009,259,21,194,20,50,38,1.4,1.4,10,7.6,icrs,gold,e_lb from FWHM of 3.3
+Svol,Ibata2019,244.44,23.37,248.73,40.94,7.76,7.76,0.5,0.5,0.21,0.21,icrs,silver,
+Sylgr,Ibata2019,167.79,-8.35,186.58,-1.26,4.1,4.1,0.5,0.5,0.02,0.02,icrs,silver,
+Tri/Pis,Bonaca2012,21.346,34.977,23.975,23.201,26,26,0.5,0.5,4,4,icrs,gold,
+TucanaIII,Shipp2018,-6.3,-59.7,3.2,-59.4,25.1,25.1,0.18,0.18,5.02,5.02,icrs,gold,distance gradient in DW2015?
+Turbio,Shipp2018,28,-61,27.9,-46,16.6,16.6,0.25,0.25,3.32,3.32,icrs,gold,
+Turranburra,Shipp2018,59.3,-18,75.2,-26.4,27.5,27.5,0.6,0.6,5.5,5.5,icrs,gold,
+Wambelong,Shipp2018,90.5,-45.6,79.3,-34.3,15.1,15.1,0.4,0.4,3.02,3.02,icrs,gold,
+Willka_Yaku,Shipp2018,36.1,-64.6,38.4,-58.3,34.7,34.7,0.21,0.21,6.94,6.94,icrs,gold,
+Ylgr,Ibata2019,169.05,-10.36,182.65,-37.12,9.53,9.53,0.5,0.5,0.26,0.26,icrs,silver,
