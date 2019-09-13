@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from astropy.coordinates import SkyCoord
 import astropy.units as u
+import pandas as pd
 
 def vpos_pars():
     pole = SkyCoord(169.3, -2.8, unit='deg', frame='galactic')
@@ -42,6 +43,14 @@ def aitoff(figsize=(8,6), dpi=100, plot_vpos=True):
         plot_aitoff(ax, con_ring.l[sel], con_ring.b[sel], plot=True, **k)
 
     return ax
+
+def load_vasiliev19():
+    catalog = 'data/Vasiliev19.txt'
+    cols = ['name', 'ra', 'dec', 'dist', 'vLOS', 'e_vLOS', 'pmRA', 'pmDE',
+            'e_pmRA', 'e_pmDE', 'pm_corr', 'Rscale', 'Nstar']
+    df = pd.read_csv(catalog, sep='\t', names=cols, skiprows=2)
+    df['name'] = df.apply(lambda x: x['name'].split('(')[0].strip(), axis=1)
+    return df.set_index('name')
 
 def plot_aitoff(ax, lon, lat, plot=None, **kwargs):
     plot_lon, plot_lat = lonlat2mpl(lon, lat)
