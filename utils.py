@@ -44,13 +44,24 @@ def aitoff(figsize=(8,6), dpi=100, plot_vpos=True):
 
     return ax
 
-def load_vasiliev19():
+def load_globulars():
     catalog = 'data/Vasiliev19.txt'
     cols = ['name', 'ra', 'dec', 'dist', 'vLOS', 'e_vLOS', 'pmRA', 'pmDE',
             'e_pmRA', 'e_pmDE', 'pm_corr', 'Rscale', 'Nstar']
     df = pd.read_csv(catalog, sep='\t', names=cols, skiprows=2)
     df['name'] = df.apply(lambda x: x['name'].split('(')[0].strip(), axis=1)
-    return df.set_index('name')
+    df.set_index('name', inplace=True)
+
+    # add classification from 2018MNRAS.481..918A (using 2005MNRAS.360..631M)
+    classifier = 'data/Arakelyan18.csv'
+    df2 = pd.read_csv(classifier)
+    df2.set_index('Name', inplace=True)
+    df['type'] = df2['Type']
+
+    # these two GCs are in Vasiliev19 and not Arakelyan18
+    df.at['Crater', 'type'] = 'UN'
+    df.at['FSR 1716', 'type'] = 'UN'
+    return df
 
 def plot_aitoff(ax, lon, lat, plot=None, **kwargs):
     plot_lon, plot_lat = lonlat2mpl(lon, lat)
