@@ -42,7 +42,7 @@ PS1-C,Bernard2016,330.26,11.75,334.98,18.2,17.4,17.4,0.5,0.5,4.05,4.05,0.14,icrs
 PS1-D,Bernard2016,138.7,-21.58,140.74,23.28,22.9,22.9,0.5,0.5,5.3,5.3,0.37,icrs,silver,e_dist is average of +5.9 -4.7
 PS1-E,Bernard2016,160.11,46.13,192.94,62.89,12.6,12.6,0.5,0.5,2.95,2.95,0.26,icrs,silver,e_dist is average of +3.3 -2.6
 Pal15,Myeong2017,255.3,-1.47,254.8,-0.12,45.1,45.1,0.3,0.3,2.0746,2.0746,0,icrs,red,
-Pal5,Pearson2017,219.79,-11.15,248.4,9.18,22.9,22.9,0.5,0.5,2.29,2.29,0.3,icrs,red,galstreams footprint based on private communication with Price-Whelan. may just want to use Pal5 as one end and only one arm for other? width from galstreams (Grillmair2006)
+Pal5,Starkman2019,219.362,-12.023,239.686,5.842,23.2,23.2,0.5,0.5,2.32,2.32,0.3,icrs,red,endpoints as reported in Starkman19. width from galstreams (Grillmair2006)
 Palca,Shipp2018,30.3,-53.7,16.2,2.4,36.3,36.3,0.85,0.85,7.26,7.26,0.85,icrs,gold,"FWHM=2, ""much wider than other new DES streams"""
 Pegasus,Perottoni2019,328.3,20.8,333.4,28.1,18,18,0.17,0.17,2,2,0.17,icrs,gold,not in galstreams (as of July 10 2019)
 Phlegethon,Ibata2018,284.75,-59.2,324.5,-0.26,3.57,3.57,1.4,1.4,0.28,0.28,1.4,icrs,silver,endpt2 is ~10 deg within stream
