@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import multiprocessing as mp
 
-countfile = 'data/processed/counting-orbits-stone.npy'
+countfile = 'data/processed/counting-orbits.npy'
 potential = gp.MilkyWayPotential()
 v_sun = coord.CartesianDifferential([10, 248, 7]*u.km/u.s)
 gc_frame = coord.Galactocentric(galcen_distance=8.178*u.kpc,
@@ -115,7 +115,7 @@ else:
     match = np.sum(out, axis=0) / 1000
     np.save(countfile, match)
 
-for row, mins in zip(table.iterrows(), np.abs(gala-galpy)):
+for row, mins in zip(table.iterrows(), match):
     name, data = row
     sel = mins > 0.05
     match_names = list(sats.index[sel])
