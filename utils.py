@@ -48,7 +48,17 @@ def load_globulars():
     df.at['FSR 1716', 'type'] = 'UN'
     return df
 
-def plot_aitoff(ax, lon, lat, plot=None, **kwargs):
+def plot_aitoff(ax, lon, lat, plot=None, lower=None, **kwargs):
+    if lower is not None:
+        # restrict normals to [lower, lower+180)
+        lon = copy.copy(lon)
+        lat = copy.copy(lat)
+        upper = lower + 180*u.deg
+        ok = lower <= lon
+        ok &= lon < upper
+        lon[~ok] = lon[~ok] + 180*u.deg
+        lat[~ok] = -lat[~ok]
+
     plot_lon, plot_lat = lonlat2mpl(lon, lat)
     if plot:
         ax.plot(plot_lon, plot_lat, **kwargs)
