@@ -4,6 +4,7 @@ from astropy.coordinates import SkyCoord
 import astropy.units as u
 import pandas as pd
 import copy
+from scipy.special import comb
 
 def vpos_pars():
     pole = SkyCoord(169.3, -2.8, unit='deg', frame='galactic')
@@ -47,6 +48,14 @@ def load_globulars():
     df.at['Crater', 'type'] = 'UN'
     df.at['FSR 1716', 'type'] = 'UN'
     return df
+
+def prob_nCk_sphere(n, k, theta, beta=0*u.deg):
+    p = (1 - np.cos(theta)) / np.cos(beta)
+    sum = 0
+    for i in range(n-k+1):
+        nCk = comb(N=n, k=k+i, exact=True, repetition=False)
+        sum += nCk * p**(k+i) * (1-p)**(n-k-i)
+    return sum
 
 def plot_aitoff(ax, lon, lat, plot=None, lower=None, **kwargs):
     if lower is not None:
