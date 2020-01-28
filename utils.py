@@ -1,10 +1,24 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from astropy.coordinates import SkyCoord
+from astropy.coordinates import SkyCoord, Galactocentric
+from astropy.coordinates.representation import CartesianDifferential as CD
 import astropy.units as u
 import pandas as pd
 import copy
 from scipy.special import comb
+
+vpos = {'pole': SkyCoord(169.3, -2.8, unit='deg', frame='galactic'),
+        'tol': np.arccos(-(0.1*(4*np.pi)/(2*np.pi) - 1)) * u.rad}
+
+galcen = {'distance': 8.122,                # 2018A&A...615L..15G
+          'distance_err': 0.031,
+          'z_sun': 20.8,                    # 2019MNRAS.482.1417B
+          'z_sun_err': 0.3,
+          'v_sun': [12.9, 245.6, 7.78],     # 2018RNAAS...2..210D
+          'v_sun_err': [3, 1.4, 0.09]}
+galcen['frame'] = Galactocentric(galcen_distance=galcen['distance'] * u.kpc,
+                                 galcen_v_sun=CD(galcen['v_sun'] * u.km/u.s),
+                                 z_sun=galcen['z_sun'] * u.pc)
 
 def vpos_pars():
     pole = SkyCoord(169.3, -2.8, unit='deg', frame='galactic')
