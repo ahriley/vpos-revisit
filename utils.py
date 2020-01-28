@@ -64,6 +64,11 @@ def load_globulars():
     df.at['FSR 1716', 'type'] = 'UN'
     return df
 
+def set_paper_random_seed():
+    from astropy.cosmology import Planck15
+    seed = int(Planck15.age(z=0)/u.kyr)
+    np.random.seed(seed=seed)
+
 def prob_nCk_sphere(n, k, theta, beta=0*u.deg):
     p = (1 - np.cos(theta)) / np.cos(beta)
     sum = 0
