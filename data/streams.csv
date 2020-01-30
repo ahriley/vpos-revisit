@@ -29,6 +29,7 @@ Kshir,Malhan:2019,2019ApJ...886L...7M,230.38107,68.166672,153.05409,25.1087,10,1
 Kwando,Grillmair:2017b,2017ApJ...847..119G,19,-23.9,31,-29.33,20.3,20.3,0.5,0.5,4.06,4.06,0.16,icrs,red,
 Leiptr,Ibata:2019,2019ApJ...872..152I,61.03,0.72,96.18,-34.21,7.92,7.92,0.5,0.5,0.42,0.42,0,icrs,silver,
 Lethe,Grillmair:2009,2009ApJ...693.1118G,258,20,171,18,13.4,12.2,0.5,0.5,2.68,2.44,0.17,icrs,gold,copying stated distances in kpc even though eastern end distance modulus says 14.01 kpc
+Magellanic,Bruns:2005,2005A&A...432...45B,355.93,-11.91,5.44,-27.34,55,55,2,2,11,11,0,icrs,red,
 Molonglo,Shipp:2018,2018ApJ...862..114S,6.4,-24.4,13.6,-28.1,22.9,22.9,0.32,0.32,4.58,4.58,0.32,icrs,gold,"in VPOS (Grillmair2017b), endpoints in DES disagree w/ Grillmair footprint (copied in galstreams)"
 Murrumbidgee,Grillmair:2017b,2017ApJ...847..119G,358.71,15.97,13.9,-25.27,20,20,0.5,0.5,4,4,0.16,icrs,red,in VPOS (Grillmair2017b)
 NGC 5053,Lauchner:2006,2006ApJ...651L..33L,199.11,17.7,195,15,17.4,17.4,0,1,0.8004,3.48,0,icrs,red,
