@@ -21,19 +21,28 @@ frame = coord.Galactocentric(galcen_distance=galcen['distance'] * u.kpc,
                              z_sun=galcen['z_sun'] * u.pc)
 galcen['frame'] = frame
 
-def aitoff(ax, xticks=None, yticks=None):
+def aitoff(ax, ticklabels=False):
     ax.set_longitude_grid_ends(90)
     ax.grid(True, ls='--', which='major')
 
-    # NOTE: needs to get adjusted to do what I want
-    if xticks and yticks:
-        xlabels = [r"{0:.0f}$^\circ$".format(tick.value) for tick in xticks]
-        ylabels = [r"{0:.0f}$^\circ$".format(tick.value) for tick in yticks]
-        xticks, yticks = lonlat2mpl(xticks, yticks)
-        ax.set_xticks(xticks)
-        ax.set_yticks(yticks)
-        ax.set_xticklabels(xlabels)
-        ax.set_yticklabels(ylabels)
+    xticks = coord.Angle(np.arange(13)*30 * u.deg)
+    xticks[0] = 0.001*u.deg
+    yticks = coord.Angle([-60, -30, 0, 30, 60]*u.deg)
+    xticks, yticks = lonlat2mpl(xticks, yticks)
+    ax.set_xticks(xticks)
+    ax.set_yticks(yticks)
+
+    if ticklabels:
+        x = ['', '', r'60$^\circ$', '', r'120$^\circ$', '', '', '',
+             r'240$^\circ$', '', r'300$^\circ$', '', '']
+        ax.set_xticklabels(x)
+        ax.tick_params(axis='both', pad=2000)
+
+        ax.set_yticklabels([])
+        ax.text(0, -np.pi/3, r'$-60^\circ$', ha='center', va='center')
+        ax.text(0, -np.pi/6, r'$-30^\circ$', ha='center', va='center')
+        ax.text(0, np.pi/3, r'$60^\circ$', ha='center', va='center')
+        ax.text(0, np.pi/6, r'$30^\circ$', ha='center', va='center')
     else:
         ax.set_xticklabels([])
         ax.set_yticklabels([])
