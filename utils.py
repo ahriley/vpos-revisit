@@ -21,11 +21,6 @@ frame = coord.Galactocentric(galcen_distance=galcen['distance'] * u.kpc,
                              z_sun=galcen['z_sun'] * u.pc)
 galcen['frame'] = frame
 
-def vpos_pars():
-    pole = coord.SkyCoord(169.3, -2.8, unit='deg', frame='galactic')
-    tol = np.arccos(-(0.1*(4*np.pi)/(2*np.pi) - 1)) * u.rad
-    return pole, tol
-
 def aitoff(ax, xticks=None, yticks=None):
     ax.set_longitude_grid_ends(90)
     ax.grid(True, ls='--', which='major')
@@ -95,8 +90,8 @@ def plot_aitoff(ax, lon, lat, plot=None, lower=None, **kwargs):
         ax.scatter(plot_lon, plot_lat, **kwargs)
 
 def plot_vpos(ax, pole=None, tol=None, counter=True):
-    co = vpos_pars()[0] if pole is None else pole
-    theta = vpos_pars()[1] if tol is None else tol
+    co = vpos['pole'] if pole is None else pole
+    theta = vpos['tol'] if tol is None else tol
     phi = np.linspace(0, 2*np.pi, 100)
     rcos = theta*np.cos(phi)
     rsin = theta*np.sin(phi)
