@@ -50,7 +50,7 @@ def aitoff(ax, ticklabels=False):
     return ax
 
 def load_globulars():
-    catalog = 'data/Vasiliev19.txt'
+    catalog = 'data/Vasiliev2019.txt'
     cols = ['name', 'ra', 'dec', 'dist', 'vLOS', 'e_vLOS', 'pmRA', 'pmDE',
             'e_pmRA', 'e_pmDE', 'pm_corr', 'Rscale', 'Nstar']
     df = pd.read_csv(catalog, sep='\t', names=cols, skiprows=2)
@@ -58,7 +58,7 @@ def load_globulars():
     df.set_index('name', inplace=True)
 
     # add classification from 2018MNRAS.481..918A (using 2005MNRAS.360..631M)
-    classifier = 'data/Arakelyan18.csv'
+    classifier = 'data/Arakelyan2018.csv'
     df2 = pd.read_csv(classifier)
     df2.set_index('Name', inplace=True)
     df['type'] = df2['Type']
