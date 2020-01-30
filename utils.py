@@ -26,17 +26,17 @@ def aitoff(ax, ticklabels=False):
     ax.grid(True, ls='--', which='major')
 
     xticks = coord.Angle(np.arange(13)*30 * u.deg)
-    xticks[0] = 0.001*u.deg
     yticks = coord.Angle([-60, -30, 0, 30, 60]*u.deg)
     xticks, yticks = lonlat2mpl(xticks, yticks)
     ax.set_xticks(xticks)
     ax.set_yticks(yticks)
 
     if ticklabels:
-        x = ['', '', r'60$^\circ$', '', r'120$^\circ$', '', '', '',
-             r'240$^\circ$', '', r'300$^\circ$', '', '']
-        ax.set_xticklabels(x)
-        ax.tick_params(axis='both', pad=2000)
+        ax.set_xticklabels([])
+        ax.text(2*np.pi/3, 0, r'$60^\circ$', ha='center', va='top')
+        ax.text(np.pi/3, 0, r'$120^\circ$', ha='center', va='top')
+        ax.text(-np.pi/3, 0, r'$240^\circ$', ha='center', va='top')
+        ax.text(-2*np.pi/3, 0, r'$300^\circ$', ha='center', va='top')
 
         ax.set_yticklabels([])
         ax.text(0, -np.pi/3, r'$-60^\circ$', ha='center', va='center')
