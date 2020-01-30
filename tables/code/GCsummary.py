@@ -24,8 +24,9 @@ with open('tables/tex/GCsummary.tex', 'w') as f:
     for pop in pops:
         if pop == 'F18':
             fritz = pd.read_csv('data/Fritz2018-table4.csv', index_col=0)
-            Ntot, Nyes, Nnot, Nidk = [39, 17, 12, 10]
-            Nsum = np.sum(fritz['p_inVPOS'])
+            # add 2 for the Magellanic Clouds
+            Ntot, Nyes, Nnot, Nidk = [39+2, 17+2, 12, 10]
+            Nsum = np.sum(fritz['p_inVPOS']) + 2
             f.write('\t\\midrule\n')
         else:
             if pop == 'All':
