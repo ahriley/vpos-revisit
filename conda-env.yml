@@ -1,0 +1,25 @@
+name: vpos-revisit
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # channel-specific
+  - astropy
+  - astro-gala
+
+  # core scientific python
+  - python
+  - pip
+  - numpy
+  - scipy
+  - pandas
+
+  # plotting packages
+  - matplotlib
+  - seaborn
+
+  # for my workflow
+  - jupyter
+  - jupyterlab
