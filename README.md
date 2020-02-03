@@ -1,6 +1,6 @@
 # vpos-revisit
 This code accompanies the following paper:
-- Snakes on a Plane: do Milky Way stellar streams and globular clusters align in a Vast Polar Structure?
+- Snakes on a Plane: do Milky Way stellar streams and globular clusters align in a Vast Polar Structure? (https://arxiv.org/abs/2001.11564)
 
 We re-visit the association of Milky Way stellar streams and globular clusters with the Vast Polar Structure (https://arxiv.org/abs/1204.5176) in light of recent discoveries and measurements.
 
