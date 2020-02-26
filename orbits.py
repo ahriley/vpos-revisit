@@ -3,23 +3,20 @@ import astropy.coordinates as coord
 import astropy.units as u
 import gala.potential as gp
 import gala.dynamics as gd
-from gala.coordinates import GreatCircleICRSFrame
 import utils
 import pickle
 import os
-import matplotlib.pyplot as plt
 import pandas as pd
 import multiprocessing as mp
 
-countfile = 'data/processed/counting-orbits.npy'
+# comment for different random seed
+utils.set_paper_random_seed()
+
+countfile = 'data/processed/counting-orbits-PW18.npy'
 potential = gp.MilkyWayPotential()
-v_sun = coord.CartesianDifferential([10, 248, 7]*u.km/u.s)
-gc_frame = coord.Galactocentric(galcen_distance=8.178*u.kpc,
-                                z_sun=20.8*u.pc,
-                                galcen_v_sun=v_sun)
 
 # load in nominal stream normals
-result_file = result_file = 'data/processed/my-compilation-output.pkl'
+result_file = result_file = 'data/processed/streams-output.pkl'
 with open(result_file, 'rb') as f:
     result = pickle.load(f)
     table = result['table']
@@ -75,22 +72,25 @@ totaltime = 1*u.Gyr
 nsteps = (totaltime / timestep).to(u.dimensionless_unscaled)
 
 # tolerance for being considered "associated"
-septolmin = 0.5
-dtolmin = 1
-disttols = np.mean(table[['e_dist1', 'e_dist2']], axis=1).values
-disttols = [d if d > dtolmin else dtolmin for d in disttols] * u.kpc
-septols = np.mean(table[['e_lb1', 'e_lb2']], axis=1).values
-septols = [a if a > septolmin else septolmin for a in septols] * u.deg
+# septolmin = 0.5
+# dtolmin = 1
+# disttols = np.mean(table[['e_dist1', 'e_dist2']], axis=1).values
+# disttols = [d if d > dtolmin else dtolmin for d in disttols] * u.kpc
+# septols = np.mean(table[['e_lb1', 'e_lb2']], axis=1).values
+# septols = [a if a > septolmin else septolmin for a in septols] * u.deg
+
+disttols = 3 * np.mean(table[['e_dist1', 'e_dist2']], axis=1).values * u.kpc
+septols = 3 * np.mean(table[['e_lb1', 'e_lb2']], axis=1).values * u.deg
 
 # function that computes orbits and associates with stream
 def orbitxstreams(ICs):
-    galcen = ICs.transform_to(gc_frame)
+    galcen = ICs.transform_to(utils.galcen['frame'])
     w0 = gd.PhaseSpacePosition(galcen.data)
     orbit = potential.integrate_orbit(w0, dt=-timestep, n_steps=nsteps)
 
     sc = coord.SkyCoord(x=orbit.x, y=orbit.y, z=orbit.z,
                         v_x=orbit.v_x, v_y=orbit.v_y, v_z=orbit.v_z,
-                        frame=gc_frame)
+                        frame=utils.galcen['frame'])
     sc = sc.transform_to(coord.ICRS).T
 
     # compute 3-D separation from each endpoint, all along orbit
@@ -112,13 +112,14 @@ else:
     ncpu = mp.cpu_count()
     pool = mp.Pool(ncpu, maxtasksperchild=1)
     out = pool.map(orbitxstreams, icrs_samples)
-    match = np.sum(out, axis=0) / 1000
+    match = np.sum(out, axis=0) / Nsamples
     np.save(countfile, match)
 
-for row, mins in zip(table.iterrows(), match):
-    name, data = row
-    sel = mins > 0.05
-    match_names = list(sats.index[sel])
-    if len(match_names) == 0:
-        continue
-    print(name, data['dist1'], match_names)
+# for evaluating things aferwards
+# for row, mins in zip(table.iterrows(), match):
+#     name, data = row
+#     sel = mins > 0.05
+#     match_names = list(sats.index[sel])
+#     if len(match_names) == 0:
+#         continue
+#     print(name, data['dist1'], match_names)
