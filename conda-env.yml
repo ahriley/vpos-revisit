@@ -8,6 +8,7 @@ dependencies:
   # channel-specific
   - astropy
   - astro-gala
+  - pytest
 
   # core scientific python
   - python
